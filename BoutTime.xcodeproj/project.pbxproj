@@ -14,6 +14,8 @@
 		307DA9F41D84C53B00A3EC8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307DA9F21D84C53B00A3EC8E /* LaunchScreen.storyboard */; };
 		307DA9FE1D84C72400A3EC8E /* CorrectDing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 307DA9FC1D84C72400A3EC8E /* CorrectDing.wav */; };
 		307DA9FF1D84C72400A3EC8E /* IncorrectBuzz.wav in Resources */ = {isa = PBXBuildFile; fileRef = 307DA9FD1D84C72400A3EC8E /* IncorrectBuzz.wav */; };
+		307DAA071D893D5200A3EC8E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307DAA061D893D5200A3EC8E /* Model.swift */; };
+		307DAA091D89BD0900A3EC8E /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307DAA081D89BD0900A3EC8E /* ScoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		307DA9F51D84C53B00A3EC8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		307DA9FC1D84C72400A3EC8E /* CorrectDing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CorrectDing.wav; sourceTree = "<group>"; };
 		307DA9FD1D84C72400A3EC8E /* IncorrectBuzz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IncorrectBuzz.wav; sourceTree = "<group>"; };
+		307DAA061D893D5200A3EC8E /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		307DAA081D89BD0900A3EC8E /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 			children = (
 				307DA9E91D84C53B00A3EC8E /* AppDelegate.swift */,
 				307DA9EB1D84C53B00A3EC8E /* ViewController.swift */,
+				307DAA081D89BD0900A3EC8E /* ScoreViewController.swift */,
+				307DAA061D893D5200A3EC8E /* Model.swift */,
 				307DA9ED1D84C53B00A3EC8E /* Main.storyboard */,
 				307DA9F01D84C53B00A3EC8E /* Assets.xcassets */,
 				307DA9F21D84C53B00A3EC8E /* LaunchScreen.storyboard */,
@@ -151,8 +157,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				307DAA071D893D5200A3EC8E /* Model.swift in Sources */,
 				307DA9EC1D84C53B00A3EC8E /* ViewController.swift in Sources */,
 				307DA9EA1D84C53B00A3EC8E /* AppDelegate.swift in Sources */,
+				307DAA091D89BD0900A3EC8E /* ScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
