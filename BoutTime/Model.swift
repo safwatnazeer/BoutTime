@@ -111,14 +111,14 @@ class BoutTime {
             event: "Battle of Waterloo: Napoleon exiled to St Helena", year: 1815,
             link: "http://www.eyewitnesstohistory.com/napoleon.htm"))
         listOfEvents.append(HistoryEvent(
-            event: "Wilbur Wright flies around the Statue of Liberty.", year: 1909,
-            link: "https://en.wikipedia.org/wiki/Wright_Brothers_flights_of_1909"))
+            event: "Unification of Italy", year: 1861,
+            link: "https://en.wikipedia.org/wiki/Italian_unification"))
         listOfEvents.append(HistoryEvent(
-            event: "Jackie Kennedy watching her husband debate Richard Nixon", year: 1960,
-            link: "http://www.history.com/topics/us-presidents/kennedy-nixon-debates"))
+            event: "Operation Barbarossa: German invasion of Russia", year: 1941,
+            link: "https://en.wikipedia.org/wiki/Operation_Barbarossa"))
         listOfEvents.append(HistoryEvent(
-            event: "Aftermath of the Victory over Japan Day celebrations in New York City.", year: 1945,
-            link: "https://en.wikipedia.org/wiki/Victory_over_Japan_Day"))
+            event: "Democracy restored in Spain", year: 1975,
+            link: "https://en.wikipedia.org/wiki/History_of_Spain_(1975%E2%80%93present)"))
         
         
     }
