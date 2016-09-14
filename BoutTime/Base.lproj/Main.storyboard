@@ -24,66 +24,54 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YLT-hb-HOC" userLabel="SV-AllLabels">
                                         <rect key="frame" x="0.0" y="0.0" width="485" height="460"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciO-Qx-1bG">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0f-Xs-B38" userLabel="firstTextButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="485" height="108"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment>
-                                                        <string key="content">is that how it shows over multiple lines or not many lines could explain more text and provide so much useful information about what can we do with this text </string>
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cv-8m-5LN">
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal">
+                                                    <string key="title">is that how it shows over multiple lines or not many lines could explain more text and provide so much useful information about what can we do with this text </string>
+                                                    <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="63N-G0-EkI" kind="show" identifier="showWebViewSegue1" id="Jlf-FC-cAe"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAq-eB-sNA" userLabel="secondTextButton">
                                                 <rect key="frame" x="0.0" y="118" width="485" height="107"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment>
-                                                        <string key="content">is that how it shows over multiple lines or not many lines could explain more text and provide so much useful information about what can we do with this text </string>
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqN-E0-mVe">
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal">
+                                                    <string key="title">is that how it shows over multiple lines or not many lines could explain more text and provide so much useful information about what can we do with this text </string>
+                                                    <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="63N-G0-EkI" kind="show" identifier="showWebViewSegue2" id="G47-me-9zJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7k-PT-ZRL" userLabel="thirdTextButton">
                                                 <rect key="frame" x="0.0" y="235" width="485" height="108"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment>
-                                                        <string key="content">is that how it shows over multiple lines or not many lines could explain more text and provide so much useful information about what can we do with this text </string>
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbc-LH-Hkw">
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal">
+                                                    <string key="title">is that how it shows over multiple lines or not many lines could explain more text and provide so much useful information about what can we do with this text </string>
+                                                    <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="63N-G0-EkI" kind="show" identifier="showWebViewSegue3" id="DRh-iL-xdI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQL-1j-pfX" userLabel="fourthTextButton">
                                                 <rect key="frame" x="0.0" y="353" width="485" height="107"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment>
-                                                        <string key="content">is that how it shows over multiple lines or not many lines could explain more text and provide so much useful information about what can we do with this text </string>
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                <state key="normal">
+                                                    <string key="title">is that how it shows over multiple lines or not many lines could explain more text and provide so much useful information about what can we do with this text </string>
+                                                    <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="63N-G0-EkI" kind="show" identifier="showWebViewSegue4" id="BOk-jP-N8a"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="APj-pw-Qms" userLabel="SV-AllButtons">
@@ -175,8 +163,7 @@
                                 </constraints>
                                 <state key="normal" image="next_round_success"/>
                                 <connections>
-                                    <action selector="nextRound" destination="BYZ-38-t0r" eventType="touchUpInside" id="JpC-FS-Taf"/>
-                                    <segue destination="NkK-A1-SsY" kind="show" identifier="finalScoreSegue" id="xPF-qw-2g6"/>
+                                    <segue destination="NkK-A1-SsY" kind="show" identifier="finalScoreSegue" animates="NO" id="xPF-qw-2g6"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVp-IY-YOX">
@@ -216,18 +203,85 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="firstLabel" destination="ciO-Qx-1bG" id="L37-xD-6D2"/>
-                        <outlet property="fourthLabel" destination="Zbc-LH-Hkw" id="OlY-n3-0oa"/>
+                        <outlet property="firstTextButton" destination="e0f-Xs-B38" id="uN4-d2-8mJ"/>
+                        <outlet property="fourthTextButton" destination="xQL-1j-pfX" id="9GZ-8N-5zB"/>
                         <outlet property="nextRoundButton" destination="pQl-FL-vYS" id="hUd-aX-k6Z"/>
-                        <outlet property="secondLabel" destination="2cv-8m-5LN" id="avZ-QK-JG9"/>
+                        <outlet property="secondTextButton" destination="hAq-eB-sNA" id="ANW-gw-loD"/>
                         <outlet property="shakeLabel" destination="vVp-IY-YOX" id="aIc-Ij-Npu"/>
-                        <outlet property="thirdLabel" destination="oqN-E0-mVe" id="A6Y-cD-PRm"/>
+                        <outlet property="thirdTextButton" destination="U7k-PT-ZRL" id="6hr-24-M3v"/>
                         <outlet property="timeLeftLabel" destination="u0e-0A-jQN" id="g7e-ud-JJ8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245" y="337"/>
+            <point key="canvasLocation" x="428" y="363"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="1H9-1I-T1I">
+            <objects>
+                <viewController id="63N-G0-EkI" customClass="WebViewController" customModule="BoutTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AYq-Gg-wJO"/>
+                        <viewControllerLayoutGuide type="bottom" id="hle-9W-i3p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h8Y-k9-5gK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0D6-tm-VED">
+                                <rect key="frame" x="0.0" y="60" width="600" height="540"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCy-WN-Kqx">
+                                <rect key="frame" x="0.0" y="20" width="600" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GeT-YI-FZA"/>
+                                </constraints>
+                                <state key="normal" image="webview_bar"/>
+                                <connections>
+                                    <action selector="closeWebView" destination="63N-G0-EkI" eventType="touchUpInside" id="GgS-xL-VXQ"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hPp-Il-02V">
+                                <rect key="frame" x="282" y="282" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hPp-Il-02V" firstAttribute="centerY" secondItem="h8Y-k9-5gK" secondAttribute="centerY" id="DKC-RV-Uwd"/>
+                            <constraint firstItem="bCy-WN-Kqx" firstAttribute="top" secondItem="AYq-Gg-wJO" secondAttribute="bottom" id="EVc-eN-aqS"/>
+                            <constraint firstItem="bCy-WN-Kqx" firstAttribute="top" secondItem="AYq-Gg-wJO" secondAttribute="bottom" id="Jav-Z5-8Ec"/>
+                            <constraint firstItem="0D6-tm-VED" firstAttribute="leading" secondItem="h8Y-k9-5gK" secondAttribute="leadingMargin" id="QB9-6c-RIh"/>
+                            <constraint firstAttribute="trailing" secondItem="0D6-tm-VED" secondAttribute="trailing" id="a5W-Pz-dOZ"/>
+                            <constraint firstItem="0D6-tm-VED" firstAttribute="top" secondItem="bCy-WN-Kqx" secondAttribute="bottom" id="bAB-rM-YwE"/>
+                            <constraint firstItem="bCy-WN-Kqx" firstAttribute="leading" secondItem="h8Y-k9-5gK" secondAttribute="leading" id="ft0-HX-2Ib"/>
+                            <constraint firstItem="bCy-WN-Kqx" firstAttribute="leading" secondItem="h8Y-k9-5gK" secondAttribute="leadingMargin" id="jM9-js-mVY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0D6-tm-VED" secondAttribute="trailing" id="lAA-lP-w1T"/>
+                            <constraint firstItem="hle-9W-i3p" firstAttribute="top" secondItem="0D6-tm-VED" secondAttribute="bottom" id="ma3-bz-pUd"/>
+                            <constraint firstItem="hPp-Il-02V" firstAttribute="centerX" secondItem="h8Y-k9-5gK" secondAttribute="centerX" id="oCa-30-eb0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bCy-WN-Kqx" secondAttribute="trailing" id="oW0-nL-Nvp"/>
+                            <constraint firstItem="0D6-tm-VED" firstAttribute="leading" secondItem="h8Y-k9-5gK" secondAttribute="leading" id="yAy-co-2Pt"/>
+                            <constraint firstAttribute="trailing" secondItem="bCy-WN-Kqx" secondAttribute="trailing" id="z1n-2Z-mpU"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Jav-Z5-8Ec"/>
+                                <exclude reference="jM9-js-mVY"/>
+                                <exclude reference="oW0-nL-Nvp"/>
+                                <exclude reference="QB9-6c-RIh"/>
+                                <exclude reference="lAA-lP-w1T"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="hPp-Il-02V" id="Xox-q7-9Z9"/>
+                        <outlet property="webView" destination="0D6-tm-VED" id="2aP-lV-u4q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rsq-9t-SnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1236" y="122"/>
         </scene>
         <!--Score View Controller-->
         <scene sceneID="eEG-g2-uDR">
@@ -287,7 +341,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0e3-L8-Fjo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="940" y="337"/>
+            <point key="canvasLocation" x="1164" y="801"/>
         </scene>
     </scenes>
     <resources>
@@ -297,5 +351,9 @@
         <image name="play_again" width="450" height="142"/>
         <image name="up_full" width="158" height="457"/>
         <image name="up_half" width="158" height="229"/>
+        <image name="webview_bar" width="1333" height="167"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="BOk-jP-N8a"/>
+    </inferredMetricsTieBreakers>
 </document>

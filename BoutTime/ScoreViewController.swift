@@ -33,4 +33,9 @@ class ScoreViewController: UIViewController {
             fatalError()
         }
     }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+
 }

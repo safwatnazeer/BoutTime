@@ -13,7 +13,7 @@ struct HistoryEvent {
     
     let event : String
     let year: Int
-    let link: NSURL?
+    let link: String?
 
 }
 
@@ -42,17 +42,84 @@ class BoutTime {
     // Initializer
     init() {
      
-        listOfEvents.append(HistoryEvent(event: "event 1980 that is very important ans can span over manylines to test how lines behave", year: 1980, link: nil))
-        listOfEvents.append(HistoryEvent(event: "event 1985 that is very important ans can span over manylines to test how lines behave", year: 1985, link: nil))
-        listOfEvents.append(HistoryEvent(event: "event  that is very important ans can span over manylines to test how lines behave 1970", year: 1970, link: nil))
-        listOfEvents.append(HistoryEvent(event: "event  that is very important ans can span over manylines to test how lines behave 2001", year: 2001, link: nil))
-        listOfEvents.append(HistoryEvent(event: "event  that is very important ans can span over manylines to test how lines behave 1919", year: 1919, link: nil))
-        listOfEvents.append(HistoryEvent(event: "event  that is very important ans can span over manylines to test how lines behave 1810", year: 1810, link: nil))
-        listOfEvents.append(HistoryEvent(event: "event  that is very important ans can span over manylines to test how lines behave 1512", year: 1512, link: nil))
-        listOfEvents.append(HistoryEvent(event: "event  that is very important ans can span over manylines to test how lines behave 1700", year: 1700, link: nil))
-        listOfEvents.append(HistoryEvent(event: "event  that is very important ans can span over manylines to test how lines behave 1516", year: 1516, link: nil))
-        listOfEvents.append(HistoryEvent(event: "event  that is very important ans can span over manylines to test how lines behave 2009", year: 2009, link: nil))
-
+        listOfEvents.append(HistoryEvent(
+            event: "Martin Luther King Jr.’s 'I have a dream' speech.", year: 1963,
+            link: "https://en.wikipedia.org/wiki/I_Have_a_Dream"))
+        listOfEvents.append(HistoryEvent(
+            event: "The iceberg believed to have sunk the Titanic", year: 1912,
+            link: "https://en.wikipedia.org/wiki/Sinking_of_the_RMS_Titanic"))
+        listOfEvents.append(HistoryEvent(
+            event: "Wilbur Wright flies around the Statue of Liberty.", year: 1909,
+            link: "https://en.wikipedia.org/wiki/Wright_Brothers_flights_of_1909"))
+        listOfEvents.append(HistoryEvent(
+            event: "Jackie Kennedy watching her husband debate Richard Nixon", year: 1960,
+            link: "http://www.history.com/topics/us-presidents/kennedy-nixon-debates"))
+        listOfEvents.append(HistoryEvent(
+            event: "Aftermath of the Victory over Japan Day celebrations in New York City.", year: 1945,
+            link: "https://en.wikipedia.org/wiki/Victory_over_Japan_Day"))
+        listOfEvents.append(HistoryEvent(
+            event: "The Hollywood sign right after it was built", year: 1923,
+            link: "http://hollywoodsign.org/1923-a-sign-is-born/"))
+        listOfEvents.append(HistoryEvent(
+            event: "Neil Armstrong walked on the moon", year: 1969,
+            link: "https://www.nasa.gov/mission_pages/apollo/apollo11.html"))
+        listOfEvents.append(HistoryEvent(
+            event: "JFK giving his famous 'Ich bin ein berliner' speech in Berlin, Germany.", year: 1963,
+            link: "https://en.wikipedia.org/wiki/Ich_bin_ein_Berliner"))
+        listOfEvents.append(HistoryEvent(
+            event: "Signing of the Treaty of Versailles.", year: 1919,
+            link: "http://www.eyewitnesstohistory.com/versailles.htm"))
+        listOfEvents.append(HistoryEvent(
+            event: "Norway's first ever shipment of bananas.", year: 1905,
+            link: "http://rarehistoricalphotos.com/bananas-norway-1905/"))
+            ////////
+        listOfEvents.append(HistoryEvent(
+            event: "Young Adolf Hitler celebrating the announcement of World War One", year: 1914,
+            link: "http://rarehistoricalphotos.com/young-hitler-cheers-start-world-war-one-august-1914/"))
+        listOfEvents.append(HistoryEvent(
+            event: "Tearing Down of Berlin Wall", year: 1989,
+            link: "http://news.bbc.co.uk/onthisday/hi/witness/november/9/newsid_3241000/3241641.stm"))
+        listOfEvents.append(HistoryEvent(
+            event: "American Revolution", year: 1765,
+            link: "https://en.wikipedia.org/wiki/American_Revolution"))
+        listOfEvents.append(HistoryEvent(
+            event: "Gutenberg's Printing Press", year: 1440,
+            link: "https://en.wikipedia.org/wiki/Printing_press"))
+        listOfEvents.append(HistoryEvent(
+            event: "French Revolution", year: 1789,
+            link: "https://en.wikipedia.org/wiki/French_Revolution"))
+        listOfEvents.append(HistoryEvent(
+            event: "Edict of Milan: Constantine accepts Christianity", year: 313,
+            link: "https://en.wikipedia.org/wiki/Constantine_the_Great_and_Christianity"))
+        listOfEvents.append(HistoryEvent(
+            event: "Muslim invasion of Spain", year: 711,
+            link: "https://en.wikipedia.org/wiki/Umayyad_conquest_of_Hispania"))
+        listOfEvents.append(HistoryEvent(
+            event: "Jerusalem falls to First Crusade", year: 1099,
+            link: "https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(1099)"))
+        listOfEvents.append(HistoryEvent(
+            event: "Start of the Hundred Year’s War", year: 1337,
+            link: "https://en.wikipedia.org/wiki/Hundred_Years%27_War"))
+        listOfEvents.append(HistoryEvent(
+            event: "Luther’s 95 theses launch the Reformation", year: 1517,
+            link: "https://en.wikipedia.org/wiki/Ninety-five_Theses"))
+            // ............
+        listOfEvents.append(HistoryEvent(
+            event: "Turks defeated outside Vienna", year: 1683,
+            link: "https://en.wikipedia.org/wiki/Battle_of_Vienna"))
+        listOfEvents.append(HistoryEvent(
+            event: "Battle of Waterloo: Napoleon exiled to St Helena", year: 1815,
+            link: "http://www.eyewitnesstohistory.com/napoleon.htm"))
+        listOfEvents.append(HistoryEvent(
+            event: "Wilbur Wright flies around the Statue of Liberty.", year: 1909,
+            link: "https://en.wikipedia.org/wiki/Wright_Brothers_flights_of_1909"))
+        listOfEvents.append(HistoryEvent(
+            event: "Jackie Kennedy watching her husband debate Richard Nixon", year: 1960,
+            link: "http://www.history.com/topics/us-presidents/kennedy-nixon-debates"))
+        listOfEvents.append(HistoryEvent(
+            event: "Aftermath of the Victory over Japan Day celebrations in New York City.", year: 1945,
+            link: "https://en.wikipedia.org/wiki/Victory_over_Japan_Day"))
+        
         
     }
     
