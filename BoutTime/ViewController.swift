@@ -14,10 +14,7 @@ class ViewController: UIViewController {
     let boutTime = BoutTime()       //
     var timer = NSTimer()           // timer object
     var timeLeft = 0                // time left for round to complete
-    var gameScore = 0               // current score for previous rounds
-    var numberOfRoundsPlayed = 0    // holds how many rounds played so far
-    let maxRoundsPerGame = 3        // game has 6 rounds
-    let maxTimeAllowed = 20         // round time 60 seconds
+    
     
     // outlets
     
@@ -28,6 +25,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var timeLeftLabel: UILabel!
     @IBOutlet weak var nextRoundButton: UIButton!
     @IBOutlet weak var shakeLabel: UILabel!
+    
+    // Control buttons outlets to enable and disable buttons at round end
+    @IBOutlet weak var firstRowButton: UIButton!
+    @IBOutlet weak var secondRowButtonUp: UIButton!
+    @IBOutlet weak var secondRowButtonDown: UIButton!
+    @IBOutlet weak var thirdRowButtonUp: UIButton!
+    @IBOutlet weak var thirdRowButtonDown: UIButton!
+    @IBOutlet weak var fourthRowButton: UIButton!
     
     
     
@@ -83,35 +88,36 @@ class ViewController: UIViewController {
     }
     
 
-    
+    // Method to be check results of one round and show button iamge accordingly
     func finishRound() {
         
-        // let timer disapper
+        // make timer disapper
         timeLeftLabel.hidden = true
         if boutTime.isCorrectOrder() {
+           
             // set button green
             nextRoundButton.setImage(UIImage(named: "next_round_success"), forState: .Normal)
-            // add to score
-            gameScore += 1
-            
         }
         else {
+            
             // set button red
             nextRoundButton.setImage(UIImage(named: "next_round_fail"), forState: .Normal)
-            // dont add to score
-            
         }
         // show next round button
         nextRoundButton.hidden = false
         
-        //show more info
+        //enable text btttons so user can click and see more info
         shakeLabel.text = "Tap event to learn more"
         enableTextButtons()
     }
     
+    // Method to intercept the call for segue and check if game is over before showing score view controller
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         if identifier == "finalScoreSegue" {
-            if numberOfRoundsPlayed < maxRoundsPerGame {
+            if boutTime.isGameOver() {
+                return true
+            }
+            else {
                 nextRound()
                 return false
             }
@@ -119,12 +125,13 @@ class ViewController: UIViewController {
         return true
     }
     
+    // Method to check which segue is being called and set data accordingly
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         // check for show final score segue
         if segue.identifier == "finalScoreSegue" {
             if let controller =  segue.destinationViewController as? ScoreViewController {
-                controller.scoreText = "\(gameScore)/\(maxRoundsPerGame)"
+                controller.scoreText = boutTime.getFinalScore()
                 controller.completionHandler = {
                     self.newGame()
                 }
@@ -132,6 +139,7 @@ class ViewController: UIViewController {
         }
         
         // check for webView segue
+        // We determine which button was clicked based on segue identifer and pass the corresponding link
         if segue.identifier == "showWebViewSegue1" {
             if let controller =  segue.destinationViewController as? WebViewController {
                 controller.link = boutTime.currentRoundData[0].link
@@ -157,6 +165,13 @@ class ViewController: UIViewController {
                 
     }
     
+    // Method to start new game
+    func newGame(){
+        boutTime.prepareNewGame()
+        nextRound()
+    }
+    
+    // Method to start a new round
     func nextRound() {
         
             // prepare next round
@@ -168,31 +183,26 @@ class ViewController: UIViewController {
             startTimer()
             // show timer
             timeLeftLabel.hidden = false
-            numberOfRoundsPlayed += 1
+            
             // disable text buttons
             disableTextButtons()
-            timeLeftLabel.text = "00:\(maxTimeAllowed)"
+            timeLeftLabel.text = "00:\(boutTime.maxTimeAllowed)"
             shakeLabel.text = "Shake to complete"
         
     }
     
-    func newGame(){
-        gameScore = 0
-        numberOfRoundsPlayed = 0
-        nextRound()
-    }
     
     // MARK: Status bar
     
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
-    // MARK: Timer 
+    // MARK: Timer Methods
     
     func startTimer () {
         
         timer.invalidate()
-        timeLeft = maxTimeAllowed
+        timeLeft = boutTime.maxTimeAllowed
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
     }
     
@@ -208,7 +218,7 @@ class ViewController: UIViewController {
                 timeLeftLabel.text = "00:\(timeLeft)"
             }
             else {
-                timeLeftLabel.text = "00:0\(timeLeft)"
+                timeLeftLabel.text = "00:0\(timeLeft)"  // make sure we always show two digits for seconds left
             }
         }
         else
@@ -230,7 +240,6 @@ class ViewController: UIViewController {
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if motion == UIEventSubtype.MotionShake {
-            print("motion shake...")
             finishRound()
         }
     }
@@ -242,12 +251,29 @@ class ViewController: UIViewController {
         thirdTextButton.enabled = false
         fourthTextButton.enabled = false
         
+        // enable control buttons 
+        firstRowButton.enabled = true
+        secondRowButtonUp.enabled = true
+        secondRowButtonDown.enabled = true
+        thirdRowButtonUp.enabled = true
+        thirdRowButtonDown.enabled = true
+        fourthRowButton.enabled = true
+        
     }
     func enableTextButtons() {
         firstTextButton.enabled = true
         secondTextButton.enabled = true
         thirdTextButton.enabled = true
         fourthTextButton.enabled = true
+        
+        // disable control buttons so user doesnt move text when round is finished
+        firstRowButton.enabled = false
+        secondRowButtonUp.enabled = false
+        secondRowButtonDown.enabled = false
+        thirdRowButtonUp.enabled = false
+        thirdRowButtonDown.enabled = false
+        fourthRowButton.enabled = false
+
     }
 
     

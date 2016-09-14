@@ -9,14 +9,16 @@
 import Foundation
 import GameKit
 
+
+// Struct to hold info about an event
 struct HistoryEvent {
-    
-    let event : String
-    let year: Int
-    let link: String?
+    let event : String  //event description
+    let year: Int       // event year
+    let link: String?   // web link to more info about event
 
 }
 
+// extend struct to allow comparision of events based on description and year
 extension HistoryEvent: Equatable {}
 
 func ==(lhs: HistoryEvent, rhs: HistoryEvent) -> Bool
@@ -32,13 +34,17 @@ func ==(lhs: HistoryEvent, rhs: HistoryEvent) -> Bool
 
 
 
-
+// core game model
 class BoutTime {
     
-    var listOfEvents = [HistoryEvent]()
-    var currentRoundData =  [HistoryEvent]()
-    var orderedRoundData = [HistoryEvent]()
-    
+    var listOfEvents = [HistoryEvent]()         // lsit of all events
+    var currentRoundData =  [HistoryEvent]()    // list of events used for current round
+    var orderedRoundData = [HistoryEvent]()     // list of events for current round but with right chronological order
+    var gameScore = 0                           // current score for previous rounds
+    var numberOfRoundsPlayed = 0                // holds how many rounds played so far
+    let maxRoundsPerGame = 6                    // game has 6 rounds
+    let maxTimeAllowed = 60                     // round time 60 seconds
+    var roundConcluded: Bool = false            // bool to be set at end of round, so score can be caculated one time per round
     // Initializer
     init() {
      
@@ -53,13 +59,13 @@ class BoutTime {
             link: "https://en.wikipedia.org/wiki/Wright_Brothers_flights_of_1909"))
         listOfEvents.append(HistoryEvent(
             event: "Jackie Kennedy watching her husband debate Richard Nixon", year: 1960,
-            link: "http://www.history.com/topics/us-presidents/kennedy-nixon-debates"))
+            link: "https://en.wikipedia.org/wiki/United_States_presidential_election,_1960"))
         listOfEvents.append(HistoryEvent(
             event: "Aftermath of the Victory over Japan Day celebrations in New York City.", year: 1945,
             link: "https://en.wikipedia.org/wiki/Victory_over_Japan_Day"))
         listOfEvents.append(HistoryEvent(
-            event: "The Hollywood sign right after it was built", year: 1923,
-            link: "http://hollywoodsign.org/1923-a-sign-is-born/"))
+            event: "The Hollywood sign was built", year: 1923,
+            link: "https://en.wikipedia.org/wiki/Hollywood_Sign"))
         listOfEvents.append(HistoryEvent(
             event: "Neil Armstrong walked on the moon", year: 1969,
             link: "https://www.nasa.gov/mission_pages/apollo/apollo11.html"))
@@ -71,14 +77,14 @@ class BoutTime {
             link: "http://www.eyewitnesstohistory.com/versailles.htm"))
         listOfEvents.append(HistoryEvent(
             event: "Norway's first ever shipment of bananas.", year: 1905,
-            link: "http://rarehistoricalphotos.com/bananas-norway-1905/"))
-            ////////
+            link: "https://prezi.com/lwmlexk-kxoi/when-the-first-bananas-came-to-norway-1905/"))
+        
         listOfEvents.append(HistoryEvent(
             event: "Young Adolf Hitler celebrating the announcement of World War One", year: 1914,
-            link: "http://rarehistoricalphotos.com/young-hitler-cheers-start-world-war-one-august-1914/"))
+            link: "http://www.dailymail.co.uk/news/article-2717026/Famous-image-showing-Adolf-Hitler-celebrating-start-First-World-War-FAKE-s-partly-length-moustache.html"))
         listOfEvents.append(HistoryEvent(
             event: "Tearing Down of Berlin Wall", year: 1989,
-            link: "http://news.bbc.co.uk/onthisday/hi/witness/november/9/newsid_3241000/3241641.stm"))
+            link: "https://en.wikipedia.org/wiki/Berlin_Wall"))
         listOfEvents.append(HistoryEvent(
             event: "American Revolution", year: 1765,
             link: "https://en.wikipedia.org/wiki/American_Revolution"))
@@ -103,13 +109,13 @@ class BoutTime {
         listOfEvents.append(HistoryEvent(
             event: "Luther’s 95 theses launch the Reformation", year: 1517,
             link: "https://en.wikipedia.org/wiki/Ninety-five_Theses"))
-            // ............
+      
         listOfEvents.append(HistoryEvent(
             event: "Turks defeated outside Vienna", year: 1683,
             link: "https://en.wikipedia.org/wiki/Battle_of_Vienna"))
         listOfEvents.append(HistoryEvent(
             event: "Battle of Waterloo: Napoleon exiled to St Helena", year: 1815,
-            link: "http://www.eyewitnesstohistory.com/napoleon.htm"))
+            link: "https://en.wikipedia.org/wiki/Napoleon"))
         listOfEvents.append(HistoryEvent(
             event: "Unification of Italy", year: 1861,
             link: "https://en.wikipedia.org/wiki/Italian_unification"))
@@ -124,8 +130,15 @@ class BoutTime {
     }
     
     // MARK: Methods
-    func createRoundData() 
+    // Function to randomely select events to be used in around
+    func createRoundData()
     {
+        // increase played round counter
+        numberOfRoundsPlayed += 1
+        
+        // reset roundConcluded 
+        roundConcluded = false
+        
         // clear previous round data
         currentRoundData.removeAll()
         orderedRoundData.removeAll()
@@ -142,33 +155,57 @@ class BoutTime {
             }
         }
         
-        // sort events by year and store for future reference
+        // sort events by year and store ordered array
         orderedRoundData =  currentRoundData.sort {
             $0.year < $1.year
         }
-   // print("sorted data: \n \(currentRoundData) \n\n\n")
+   
     }
     
     
-    // Check correct order
+    // Check if events on screen are in correct order
     //
     func isCorrectOrder() -> Bool {
-        return(
+        if
             orderedRoundData[0] == currentRoundData[0] &&
             orderedRoundData[1] == currentRoundData[1] &&
             orderedRoundData[2] == currentRoundData[2] &&
             orderedRoundData[3] == currentRoundData[3]
-        )
+        {
+            if !roundConcluded {
+                gameScore += 1
+                roundConcluded = true
+            }
+            return true
+        } else {
+            return false
+        }
         
     }
     
-    // swap data
+    // Function to swap events in the array
     //
     func swapCurrentRoundData(index1: Int, index2: Int) {
         
         let temp = currentRoundData[index1]
         currentRoundData[index1] = currentRoundData[index2]
         currentRoundData[index2] = temp
+    }
+    
+    //Funciton to check if game over 
+    func isGameOver() -> Bool {
+        return !(numberOfRoundsPlayed < maxRoundsPerGame)
+    }
+    
+    // Function reset score, rounds for new game
+    func prepareNewGame() {
+        gameScore = 0
+        numberOfRoundsPlayed = 0
+    }
+    
+    // Method to give back final score when game is finished
+    func getFinalScore()-> String {
+       return "\(gameScore)/\(maxRoundsPerGame)"
     }
     
 }

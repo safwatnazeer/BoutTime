@@ -137,9 +137,9 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKt-kx-xyF">
-                                <rect key="frame" x="40" y="20" width="112" height="17"/>
+                                <rect key="frame" x="40" y="20" width="154" height="17"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="(Oldest at the top)">
+                                    <fragment content="(Oldest event on the top)">
                                         <attributes>
                                             <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="14" name="HelveticaNeue-Italic"/>
@@ -203,11 +203,17 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="firstRowButton" destination="KMN-Id-XQN" id="sbL-Sg-VYH"/>
                         <outlet property="firstTextButton" destination="e0f-Xs-B38" id="uN4-d2-8mJ"/>
+                        <outlet property="fourthRowButton" destination="2uk-Zh-GHQ" id="gG0-Ul-qHY"/>
                         <outlet property="fourthTextButton" destination="xQL-1j-pfX" id="9GZ-8N-5zB"/>
                         <outlet property="nextRoundButton" destination="pQl-FL-vYS" id="hUd-aX-k6Z"/>
+                        <outlet property="secondRowButtonDown" destination="b8b-04-O43" id="HXH-qA-KFb"/>
+                        <outlet property="secondRowButtonUp" destination="f1L-SV-kXs" id="aTF-Fx-Cxv"/>
                         <outlet property="secondTextButton" destination="hAq-eB-sNA" id="ANW-gw-loD"/>
                         <outlet property="shakeLabel" destination="vVp-IY-YOX" id="aIc-Ij-Npu"/>
+                        <outlet property="thirdRowButtonDown" destination="LOx-A5-GQD" id="Vot-Xb-2FY"/>
+                        <outlet property="thirdRowButtonUp" destination="gAA-No-mEh" id="eIF-x4-Py2"/>
                         <outlet property="thirdTextButton" destination="U7k-PT-ZRL" id="6hr-24-M3v"/>
                         <outlet property="timeLeftLabel" destination="u0e-0A-jQN" id="g7e-ud-JJ8"/>
                     </connections>
